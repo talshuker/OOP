@@ -42,9 +42,7 @@ public abstract class AerialVehicle implements AerialVehicleService {
         return mission;
     }
 
-    public void setMission(Mission mission) throws MissionTypeException {
-        this.mission = mission;
-    }
+    public void setMission(Mission mission) throws MissionTypeException {}
 
     public String getEngineModel() {
         return engineModel;
