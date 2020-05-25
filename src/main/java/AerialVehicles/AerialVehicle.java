@@ -7,10 +7,7 @@ import Missions.MissionTypeException;
 
 public abstract class AerialVehicle implements AerialVehicleService {
     protected String pilotName;
-    protected String engineModel;
     protected Mission mission;
-    protected Double wingspan;
-    protected Double length;
     protected int hoursOfFlightSinceLastRepair;
     protected Boolean readyToFly;
 
@@ -31,7 +28,7 @@ public abstract class AerialVehicle implements AerialVehicleService {
     }
 
     public String getPilotName() {
-        return pilotName;
+        return this.pilotName;
     }
 
     public void setPilotName(String pilotName) {
@@ -39,37 +36,13 @@ public abstract class AerialVehicle implements AerialVehicleService {
     }
 
     public Mission getMission() {
-        return mission;
+        return this.mission;
     }
 
     public void setMission(Mission mission) throws MissionTypeException {}
 
-    public String getEngineModel() {
-        return engineModel;
-    }
-
-    public void setEngineModel(String engineModel) {
-        this.engineModel = engineModel;
-    }
-
-    public Double getWingspan() {
-        return wingspan;
-    }
-
-    public void setWingspan(Double wingspan) {
-        this.wingspan = wingspan;
-    }
-
-    public Double getLength() {
-        return length;
-    }
-
-    public void setLength(Double length) {
-        this.length = length;
-    }
-
     public int getHoursOfFlightSinceLastRepair() {
-        return hoursOfFlightSinceLastRepair;
+        return this.hoursOfFlightSinceLastRepair;
     }
 
     public Boolean getReadyToFly() {

@@ -1,19 +1,29 @@
 package Missions;
 
+import AerialVehicles.AerialIntelligenceVehicle;
 import AerialVehicles.AerialVehicle;
 
 public class IntelligenceMission extends Mission{
-    String sensorType;
+    String region;
 
-    void gatherInformation(){
-        System.out.println("Gathering Information.....");
+    public IntelligenceMission(String region) {
+        this.region = region;
+    }
 
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     @Override
     public void activateParticipatingVehicles() {
-        for (AerialVehicle aerialVehicle : this.participatingVehicles){
-            aerialVehicle.collectIntelligence();
+        for (AerialVehicle aerialVehicle : this.getParticipatingVehicles()){
+            if (aerialVehicle instanceof AerialIntelligenceVehicle) {
+                ((AerialIntelligenceVehicle) aerialVehicle).collectIntelligence();
+            }
         }
     }
 }

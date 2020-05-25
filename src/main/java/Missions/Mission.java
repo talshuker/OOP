@@ -1,20 +1,14 @@
 package Missions;
 
         import AerialVehicles.AerialVehicle;
-        import Entities.Commander;
         import Entities.Coordinates;
-        import Entities.MissionStatus;
 
-        import java.util.Date;
         import java.util.List;
 
 
 public abstract class Mission implements MissionService{
-    protected Coordinates destination;
-    protected Date dueDate;
+    protected Coordinates coordinates;
     protected List<AerialVehicle> participatingVehicles;
-    protected Commander commander;
-    protected MissionStatus missionStatus;
 
     @Override
     public void begin() {
@@ -29,5 +23,22 @@ public abstract class Mission implements MissionService{
     @Override
     public void finish() {
         System.out.println("Finish Mission");
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+
+    public List<AerialVehicle> getParticipatingVehicles() {
+        return participatingVehicles;
+    }
+
+    public void setParticipatingVehicles(List<AerialVehicle> participatingVehicles) {
+        this.participatingVehicles = participatingVehicles;
     }
 }
